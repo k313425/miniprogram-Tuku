@@ -1,0 +1,9 @@
+<import src="/pages/common/head.wxml" />
+<import src="/pages/common/foot.wxml" />
+<!--index.wxml-->
+<view class="container">
+
+  <template is="head" data="{{title: 'button',desc: 'button'}}" />
+
+  <template is="foot" />
+</view>

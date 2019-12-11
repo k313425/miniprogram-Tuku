@@ -1,0 +1,5 @@
+<template name="foot">
+  <navigator class="page-foot" openType="switchTab" url="/pages/index/index" hover-class="none">
+    <text>@潍坊黑光企业管理咨询有限公司</text>
+  </navigator>
+</template>
