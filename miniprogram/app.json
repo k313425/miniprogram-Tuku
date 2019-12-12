@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/works/index"
+    "pages/works/works",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#09f",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "黑光图库",
     "navigationBarTextStyle": "white"
   },
@@ -23,7 +24,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/works/index",
+        "pagePath": "pages/works/works",
         "iconPath": "images/icon_cloud.png",
         "selectedIconPath": "images/icon_cloud_HL.png",
         "text": "发现精彩"

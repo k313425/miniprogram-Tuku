@@ -7,7 +7,16 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    background: [
+      '/images/img-750_458_blue.jpg',
+      '/images/img-750_458_red.jpg',
+      '/images/img-750_458_blue.jpg',
+      '/images/img-750_458_red.jpg'
+    ],
+    vertical: false,
+    autoplay: true,
+    circular: true,
   },
 
   onLoad: function() {
