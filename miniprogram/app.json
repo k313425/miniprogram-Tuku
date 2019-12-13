@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/lists/lists",
     "pages/index/index",
     "pages/works/works",
     "pages/detail/detail"
@@ -24,10 +25,10 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/works/works",
+        "pagePath": "pages/lists/lists",
         "iconPath": "images/icon_cloud.png",
         "selectedIconPath": "images/icon_cloud_HL.png",
-        "text": "发现精彩"
+        "text": "文章"
       }
     ]
   },

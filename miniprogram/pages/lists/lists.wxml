@@ -1,0 +1,24 @@
+<!--miniprogram/pages/lists/lists.wxml-->
+<view class="types-nav mescroll-touch-x">
+  <view class="types-nav-bd" id="scrollxContent">
+    <view class="types-nav-ul" id="nav">
+      <text class="active" i="0" lurl="http://localhost/api/works-list.php?id=1088812">全部</text>
+      <text i="1" lurl="http://localhost/api/works-list.php">小清新</text>
+      <text i="2" lurl="http://localhost/api/works-list?id=1088814">工笔画风</text>
+    </view>
+  </view>
+</view>
+<view id="swiper" class="types-cnt swiper-container">
+  <view class="swiper-wrapper">
+    <view class="swiper-slide mescroll">
+      <view class="types-article"></view>
+    </view>
+    <view class="swiper-slide mescroll">
+      <view class="types-article"></view>
+    </view>
+    <view class="swiper-slide mescroll">
+      <view class="types-article"></view>
+    </view>
+  </view>
+</view>
+

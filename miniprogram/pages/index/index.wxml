@@ -14,7 +14,7 @@
       duration="300">
       <block wx:for="{{background}}" wx:key="index">
         <swiper-item>
-          <navigator url="/pages/works/works"><image class="index-banner-img" src="{{item}}"></image></navigator>
+          <navigator url="/pages/detail/detail?id=488"><image class="index-banner-img" src="{{item}}"></image></navigator>
         </swiper-item>
       </block>
     </swiper>
@@ -50,27 +50,27 @@
   <view class="index-article">
     <view class="ttl">推荐文章 <navigator url="">MORE ></navigator></view>
     <view class="sub">
-      <navigator url="/pages/works/works">
+      <navigator url="/pages/detail/detail">
         <image src="/images/img-424_308.jpg"></image>
         <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
       </navigator>
-      <navigator url="/pages/works/works">
+      <navigator url="/pages/detail/detail">
         <image src="/images/img-424_308.jpg"></image>
         <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
       </navigator>
-      <navigator url="/pages/works/works">
+      <navigator url="/pages/detail/detail">
         <image src="/images/img-424_308.jpg"></image>
         <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
       </navigator>
-      <navigator url="/pages/works/works">
+      <navigator url="/pages/detail/detail">
         <image src="/images/img-424_308.jpg"></image>
         <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
       </navigator>
-      <navigator url="/pages/works/works">
+      <navigator url="/pages/detail/detail">
         <image src="/images/img-424_308.jpg"></image>
         <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
       </navigator>
-      <navigator url="/pages/works/works">
+      <navigator url="/pages/detail/detail">
         <image src="/images/img-424_308.jpg"></image>
         <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
       </navigator>
@@ -81,7 +81,7 @@
     <view class="index-list-bd">
       <view class="index-list-ul" id="dataList">
         <view class="index-list-li">
-          <navigator url="/pages/works/works"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
+          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
           <view class="index-list-title">一起去旅行</view>
           <view class="index-list-cnt">
             <text class="index-list-author">自由摄影师童心</text>
@@ -89,7 +89,7 @@
           </view>
         </view>
         <view class="index-list-li">
-          <navigator url="/pages/works/works"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
+          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
           <view class="index-list-title">一起去旅行</view>
           <view class="index-list-cnt">
             <text class="index-list-author">自由摄影师童心</text>
@@ -97,7 +97,7 @@
           </view>
         </view>
         <view class="index-list-li">
-          <navigator url="/pages/works/works"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
+          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
           <view class="index-list-title">一起去旅行</view>
           <view class="index-list-cnt">
             <text class="index-list-author">自由摄影师童心</text>
@@ -105,7 +105,7 @@
           </view>
         </view>
         <view class="index-list-li">
-          <navigator url="/pages/works/works"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
+          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
           <view class="index-list-title">一起去旅行</view>
           <view class="index-list-cnt">
             <text class="index-list-author">自由摄影师童心</text>
@@ -113,7 +113,7 @@
           </view>
         </view>
         <view class="index-list-li">
-          <navigator url="/pages/works/works"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
+          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
           <view class="index-list-title">一起去旅行</view>
           <view class="index-list-cnt">
             <text class="index-list-author">自由摄影师童心</text>
@@ -123,6 +123,4 @@
       </view>
     </view>
   </view>
-  <navigator url="/pages/works/works?title=navigate" open-type='switchTab' hover-class="navigator-hover">跳转到新页面</navigator>
-  <navigator url="/pages/detail/detail" hover-class="navigator-hover">跳转到新页面</navigator>
 </view>
