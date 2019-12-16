@@ -2,9 +2,9 @@
 <view class="types-nav mescroll-touch-x">
   <view class="types-nav-bd" id="scrollxContent">
     <view class="types-nav-ul" id="nav">
-      <text class="active" i="0" lurl="http://localhost/api/works-list.php?id=1088812">全部</text>
-      <text i="1" lurl="http://localhost/api/works-list.php">小清新</text>
-      <text i="2" lurl="http://localhost/api/works-list?id=1088814">工笔画风</text>
+      <text class="active" data-i="0" data-lurl="#">全部</text>
+      <text data-i="1" data-lurl="#">小清新</text>
+      <text data-i="2" data-lurl="#">工笔画风</text>
     </view>
   </view>
 </view>

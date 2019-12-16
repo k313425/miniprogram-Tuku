@@ -1,5 +1,5 @@
 //index.js
-const app = getApp()
+const app = getApp();
 
 Page({
   data: {
@@ -23,7 +23,7 @@ Page({
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
-      })
+      });
       return
     }
 
@@ -61,14 +61,14 @@ Page({
       name: 'login',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
+        console.log('[云函数] [login] user openid: ', res.result.openid);
+        app.globalData.openid = res.result.openid;
         wx.navigateTo({
           url: '../userConsole/userConsole',
         })
       },
       fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
+        console.error('[云函数] [login] 调用失败', err);
         wx.navigateTo({
           url: '../deployFunctions/deployFunctions',
         })
@@ -76,7 +76,9 @@ Page({
     })
   },
 
-  // 上传图片
+  /**
+   * 上传图片
+   */
   doUpload: function () {
     // 选择图片
     wx.chooseImage({
@@ -87,28 +89,28 @@ Page({
 
         wx.showLoading({
           title: '上传中',
-        })
+        });
 
-        const filePath = res.tempFilePaths[0]
+        const filePath = res.tempFilePaths[0];
         
         // 上传图片
-        const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
+        const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0];
         wx.cloud.uploadFile({
           cloudPath,
           filePath,
           success: res => {
-            console.log('[上传文件] 成功：', res)
+            console.log('[上传文件] 成功：', res);
 
-            app.globalData.fileID = res.fileID
-            app.globalData.cloudPath = cloudPath
-            app.globalData.imagePath = filePath
+            app.globalData.fileID = res.fileID;
+            app.globalData.cloudPath = cloudPath;
+            app.globalData.imagePath = filePath;
             
             wx.navigateTo({
               url: '../storageConsole/storageConsole'
             })
           },
           fail: e => {
-            console.error('[上传文件] 失败：', e)
+            console.error('[上传文件] 失败：', e);
             wx.showToast({
               icon: 'none',
               title: '上传失败',
@@ -125,5 +127,12 @@ Page({
       }
     })
   },
+  
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
+  }
 
-})
+});
