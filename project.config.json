@@ -4,14 +4,27 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+    "enhance": true,
 		"postcss": true,
+    "preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+    "coverView": true,
+    "autoAudits": true,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
 	},
 	"appid": "wx21a4fe8ab1121999",
 	"projectname": "miniprogram-hgtuku-master",
-	"libVersion": "2.8.1",
+  "libVersion": "2.9.4",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

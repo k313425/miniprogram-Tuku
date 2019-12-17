@@ -1,1 +1,47 @@
 /* miniprogram/pages/detail/detail.wxss */
+.top_bottomView {
+  display: flex;
+}
+.scroll-x {
+  height: 62 rpx;
+  width: 100%;
+  background: #ec4c3d;
+  white-space: nowrap;
+  /* display: flex;i */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/* 隐藏scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.view-item {
+  width: 12%;
+  /* height: 62rpx; */
+  display: inline-block;
+  text-align: center;
+  font-size: 25 rpx;
+  color: #fff;
+  opacity: 0.6;
+}
+.item-active {
+  color: #fff;
+  opacity: 1;
+  font-size: 32 rpx;
+}
+.top_rightView {
+  position: relative;
+  background: #ec4c3d;
+  width: 10%;
+  height: 62 rpx;
+  right: 0;
+}
+.top_rightImage {
+  position: absolute;
+  left: 20 rpx;
+  top: 20 rpx;
+  height: 32 rpx;
+  width: 32 rpx;
+}

@@ -1,66 +1,40 @@
 // miniprogram/pages/detail/detail.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    list: ['精选', '新闻', '电影', '电视剧', '综艺', '少儿', '体育', '音乐', '游戏'],
+    UserInfo: '',
+    navScrollLeft: 10,
+    clickNumber: 0,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  //点击上方文字  切换
+  centerTap: function (event) {
+    //点击的偏移量
+    console.log(event);
+    var cur = event.detail.x;
+    console.log(cur);
+    //每个tab选项宽度占15%
+    var singleNavWidth = wx.getSystemInfoSync().windowWidth * 12 / 100;
+    console.log(singleNavWidth);
+    this.setData({
+      navScrollLeft: singleNavWidth,
+      clickNumber: parseInt(cur / singleNavWidth)
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  changeSwipe: function (event) {
+    console.log(event);
+    var type =
+      event.detail.current;
+    this.setData({
+      clickNumber: type
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  getuserinfo: function (e) {
+    console.log(e);
+    this.setData({
+      UserInfo: e.detail.userInfo
+    });
+    return true;
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onLoad: function () {
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});

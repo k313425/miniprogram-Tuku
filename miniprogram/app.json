@@ -20,14 +20,14 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/icon_component.png",
-        "selectedIconPath": "images/icon_component_HL.png",
+        "iconPath": "images/icon_Home.png",
+        "selectedIconPath": "images/icon_Home_HL.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/lists/lists",
-        "iconPath": "images/icon_cloud.png",
-        "selectedIconPath": "images/icon_cloud_HL.png",
+        "iconPath": "images/icon_List.png",
+        "selectedIconPath": "images/icon_List_HL.png",
         "text": "文章"
       }
     ]

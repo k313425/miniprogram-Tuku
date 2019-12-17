@@ -1,2 +1,19 @@
 <!--miniprogram/pages/detail/detail.wxml-->
-<text>miniprogram/pages/detail/detail.wxml</text>
+<view class='top_bottomView'>
+  <scroll-view scroll-x class="scroll-x" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{list}}" wx:key="index">
+      <view class="view-item {{clickNumber==index?'item-active':''}}" bindtap='centerTap'>
+        {{item}}
+      </view>
+    </block>
+  </scroll-view>
+</view>
+  <!-- 内容区 -->
+<swiper style="height:1100rpx" bindchange='changeSwipe' current='{{clickNumber}}'>
+  <swiper-item wx:for="{{list}}" wx:key="index">
+    <!-- <include src="../home/jingxuan.wxml" /> -->
+    <view class='test-class'>{{UserInfo.nickName}}</view>
+    <i-button type="primary" openType="getUserInfo" bind:click="getuserinfo">这是一个按钮</i-button>
+    <i-button type="primary" openType="getUserInfo" bind:getuserinfo="getuserinfo">这是一个按钮2</i-button>
+  </swiper-item>
+</swiper>
