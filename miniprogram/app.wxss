@@ -1,22 +1,23 @@
 /**app.wxss**/
 button {
+  padding: 0;
+  outline: none;
+  border: none;
+  font-weight: normal;
   background: initial;
 }
-
 button:focus {
   outline: 0;
 }
-
 button:after {
   border: none;
 }
-
 input {
+  padding: 0;
   outline: none;
   border: none;
   list-style: none;
 }
-
 page {
   background: #fff;
   display: flex;

@@ -1,17 +1,59 @@
 <!--miniprogram/pages/detail/detail.wxml-->
-<view class='top_bottomView'>
-  <scroll-view scroll-x class="scroll-x" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
-    <block wx:for="{{list}}" wx:key="index">
-      <view class="view-item {{clickNumber==index?'item-active':''}}" bindtap='centerTap'>
-        {{item}}
-      </view>
-    </block>
-  </scroll-view>
+<view class="zuopin-head ">
+  <view class="zuopin-head-title">旅拍夜景</view>
+  <navigator url="/pages/detail/detail">
+    <image class="zuopin-head-img" src="/images/img-422_422.jpg"></image>
+  </navigator>
+  <text class="zuopin-head-name">影宸</text>
 </view>
-  <!-- 内容区 -->
-<swiper style="height:1100rpx" bindchange='changeSwipe' current='{{clickNumber}}'>
-  <swiper-item  wx:for="{{list}}" wx:key="index">
-    <!-- <include src="../home/jingxuan.wxml" /> -->
-    <view class='test-class'>{{list[index]}}</view>
-  </swiper-item>
-</swiper>
+<view class="zuopin-cnt">
+  <view class="zuopin-cnt-text">
+    美不胜收！
+  </view>
+  <view class="zuopin-cnt-list">
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+  </view>
+  <view class="zuopin-cnt-tag">
+    <text>旅拍</text>
+    <text>纪实</text>
+  </view>
+  <view class="zuopin-cnt-time">2019-12-17 发布</view>
+</view>
+<view class="zuopin-love">
+  <view class="zuopin-love-circle">
+    <view class="zuopin-love-img "></view>
+  </view>
+  <view class="zuopin-love-num"><text>0</text>人 喜欢
+  </view>
+</view>
+<view class="zuopin-focus ">
+  <navigator url="url">
+    <image class="zuopin-focus-img" src="/images/img-422_422.jpg"></image>
+  </navigator>
+  <view class="zuopin-focus-name">影宸</view>
+  <view class="zuopin-focus-info">邀你一起加入黑光图库</view>
+  <button class="zuopin-focus-join">+</button>
+</view>
+<view class="zuopin-zuopin">
+  <navigator url="/pages/detail/detail">
+    <image class="zuopin-zuopin-img" src="/images/img-422_422.jpg"></image>
+  </navigator>
+  <navigator url="/pages/detail/detail">
+    <image class="zuopin-zuopin-img" src="/images/img-422_422.jpg"></image>
+  </navigator>
+  <navigator url="/pages/detail/detail">
+    <image class="zuopin-zuopin-img" src="/images/img-422_422.jpg"></image>
+  </navigator>
+  <navigator url="/pages/detail/detail" class="zuopin-zuopin-go"></navigator>
+</view>
+
