@@ -3,7 +3,7 @@
   display: flex;
 }
 .scroll-x {
-  height: 62 rpx;
+  height: 62rpx;
   width: 100%;
   background: #ec4c3d;
   white-space: nowrap;
@@ -22,26 +22,26 @@
   /* height: 62rpx; */
   display: inline-block;
   text-align: center;
-  font-size: 25 rpx;
+  font-size: 25rpx;
   color: #fff;
   opacity: 0.6;
 }
 .item-active {
   color: #fff;
   opacity: 1;
-  font-size: 32 rpx;
+  font-size: 32rpx;
 }
 .top_rightView {
   position: relative;
   background: #ec4c3d;
   width: 10%;
-  height: 62 rpx;
+  height: 62rpx;
   right: 0;
 }
 .top_rightImage {
   position: absolute;
-  left: 20 rpx;
-  top: 20 rpx;
-  height: 32 rpx;
-  width: 32 rpx;
+  left: 20rpx;
+  top: 20rpx;
+  height: 32rpx;
+  width: 32rpx;
 }

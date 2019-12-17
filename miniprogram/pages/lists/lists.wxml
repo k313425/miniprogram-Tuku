@@ -2,9 +2,7 @@
 <view class="types-nav">
   <scroll-view scroll-x="true" class="types-nav-ul" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
     <block wx:for="{{navInfo.nav}}" wx:key="index">
-      <text class="{{clickNumber==index?'active':''}}" data-i="{{item.id}}" data-lurl="{{item.lurl}}"
-            bindtap='centerTap'>{{item.val}}
-      </text>
+      <text class="{{clickNumber==index?'active':''}}" data-i="{{item.id}}" data-lurl="{{item.lurl}}" bindtap='centerTap'>{{item.val}}</text>
     </block>
   </scroll-view>
 </view>

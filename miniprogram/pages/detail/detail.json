@@ -1,6 +1,4 @@
 {
   "navigationBarTitleText": "详情",
-  "usingComponents": {
-    "i-button": "/components/button/index"
-  }
+  "usingComponents": {}
 }

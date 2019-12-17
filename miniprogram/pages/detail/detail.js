@@ -1,13 +1,12 @@
 // miniprogram/pages/detail/detail.js
 Page({
   data: {
-    list: ['精选', '新闻', '电影', '电视剧', '综艺', '少儿', '体育', '音乐', '游戏'],
-    UserInfo: '',
+    list:['精选','新闻','电影','电视剧','综艺','少儿','体育','音乐','游戏'],
     navScrollLeft: 10,
     clickNumber: 0,
   },
   //点击上方文字  切换
-  centerTap: function (event) {
+  centerTap:function(event) {
     //点击的偏移量
     console.log(event);
     var cur = event.detail.x;
@@ -20,7 +19,7 @@ Page({
       clickNumber: parseInt(cur / singleNavWidth)
     })
   },
-  changeSwipe: function (event) {
+  changeSwipe:function(event) {
     console.log(event);
     var type =
       event.detail.current;
@@ -28,13 +27,8 @@ Page({
       clickNumber: type
     });
   },
-  getuserinfo: function (e) {
-    console.log(e);
-    this.setData({
-      UserInfo: e.detail.userInfo
-    });
-    return true;
-  },
+  
   onLoad: function () {
+  
   },
 });

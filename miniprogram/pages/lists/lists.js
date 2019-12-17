@@ -77,7 +77,7 @@ Page({
    * 点击tab
    * @param e: ...
    */
-  centerTap: function (e) {
+  centerTap:function(e) {
     //点击的偏移量
     console.log(e);
     if (this.data.clickNumber == e.target.dataset.i) {
@@ -90,8 +90,8 @@ Page({
       })
     }
   },
-  changeSwipe: function (e) {
-    var scrollNavWidth = (e.detail.current + 1) * 50 - this.data.windowWidth;
+  changeSwipe:function(e) {
+    var scrollNavWidth = (e.detail.current + 1)* 50 - this.data.windowWidth;
     this.setData({
       navScrollLeft: scrollNavWidth,
       clickNumber: e.detail.current
@@ -102,7 +102,7 @@ Page({
    */
   onLoad: function () {
     this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth / 2
+      windowWidth: wx.getSystemInfoSync().windowWidth/2
     });
   },
   /**

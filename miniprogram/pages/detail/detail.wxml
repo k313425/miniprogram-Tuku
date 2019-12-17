@@ -10,10 +10,8 @@
 </view>
   <!-- 内容区 -->
 <swiper style="height:1100rpx" bindchange='changeSwipe' current='{{clickNumber}}'>
-  <swiper-item wx:for="{{list}}" wx:key="index">
+  <swiper-item  wx:for="{{list}}" wx:key="index">
     <!-- <include src="../home/jingxuan.wxml" /> -->
-    <view class='test-class'>{{UserInfo.nickName}}</view>
-    <i-button type="primary" openType="getUserInfo" bind:click="getuserinfo">这是一个按钮</i-button>
-    <i-button type="primary" openType="getUserInfo" bind:getuserinfo="getuserinfo">这是一个按钮2</i-button>
+    <view class='test-class'>{{list[index]}}</view>
   </swiper-item>
 </swiper>

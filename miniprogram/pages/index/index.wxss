@@ -54,8 +54,8 @@ swiper image {
   margin-top: 20rpx;
 }
 .index-shi {
-  border-top: 20 rpx solid #f2f2f2;
-  border-bottom: 20 rpx solid #f2f2f2;
+  border-top: 20rpx solid#f2f2f2;
+  border-bottom: 20rpx solid#f2f2f2;
   font-size: 28rpx;
 }
 .index-shi image {
@@ -86,7 +86,7 @@ swiper image {
   color: #949494;
 }
 .index-article {
-  border-bottom: 20 rpx solid #f2f2f2;
+  border-bottom: 20rpx solid#f2f2f2;
   font-size: 28rpx;
 }
 .index-article .sub {
@@ -96,7 +96,7 @@ swiper image {
   justify-content: flex-start;
   padding: 50rpx 15rpx;
   overflow: auto;
-  border-top: 2 rpx solid #f2f2f2;
+  border-top: 2rpx solid#f2f2f2;
 }
 .index-article .sub image {
   display: block;
@@ -159,7 +159,7 @@ swiper image {
   color: #949494;
 }
 .index-list {
-  padding: 40 rpx 30 rpx 0 30 rpx;
+  padding: 40rpx 30rpx 0 30rpx;
 }
 .index-list:after {
   content: '';
@@ -171,7 +171,7 @@ swiper image {
   width: 300rpx;
   height: 44rpx;
   margin: 0 auto;
-  border-top: 4 rpx solid #000;
+  border-top: 4rpx solid#000;
 }
 .index-list-hd:after {
   content: '大家都在看';
