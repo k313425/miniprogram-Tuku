@@ -1,0 +1,19 @@
+<scroll-view class="types-nav"
+             style="height: {{size}}rpx;"
+             scroll-x="{{scrolling}}"
+             scroll-with-animation="{{scrolling}}"
+             scroll-left="{{scrollLeft}}">
+  <view class="types-nav-bd">
+    <view class="types-nav-ul" style="height: {{size}}rpx">
+      <view class="types-nav-li {{index === tabCur ? 'active': ''}}"
+            style="height: {{size}}rpx;line-height: {{size}}rpx"
+            wx:for="{{tabData}}"
+            wx:key="index"
+            bindtap="toggleTab"
+            data-index="{{index}}">{{item}}
+      </view>
+      <view class="types-nav-line {{needTransition ? 'transition' : ''}}"
+            style="background: {{color}};width: {{lineWidth}}px;transform: translateX({{translateX}}px)"></view>
+    </view>
+  </view>
+</scroll-view>
