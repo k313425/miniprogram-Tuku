@@ -10,6 +10,7 @@ button:focus {
 }
 button:after {
   border: none;
+  display: none;
 }
 input {
   padding: 0;
@@ -17,7 +18,11 @@ input {
   border: none;
   list-style: none;
 }
+.holderplace {
+  font-family: Monospaced Number, Chinese Quote, -apple-system, Microsoft YaHei, sans-serif;
+}
 page {
+  font-family: Monospaced Number, Chinese Quote, -apple-system, Microsoft YaHei, sans-serif;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -25,8 +30,8 @@ page {
 }
 .test-test-test-test {
   animation: ani-roll 1s infinite linear both;
-  border-top: 2rpx solid #f2f2f2;
+  border-top: 2rpx solid#f2f2f2;
   border-bottom: 20rpx solid rgb(246, 246, 246);
-  transition: transform 0.15s ease-in-out;
-  background: 0 center no-repeat;
+  transition: transform0.15sease-in-out;
+  background: 0 centerno-repeat;
 }

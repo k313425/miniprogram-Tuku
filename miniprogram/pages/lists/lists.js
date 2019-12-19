@@ -141,8 +141,8 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: 'scroll-view',
-      path: 'page/component/pages/scroll-view/scroll-view'
+      title: 'list',
+      path: 'page/component/pages/list/list'
     }
   }
 });

@@ -109,8 +109,5 @@ page {
 .swiper-slide {
   height: 100%;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
 }
-swiper-item {
-  -webkit-overflow-scrolling: touch;
-}
+

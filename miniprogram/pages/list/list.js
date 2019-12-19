@@ -54,7 +54,6 @@ Page({
         'content-type': 'application/json', // 默认值
       },
       success: (res) => {
-        console.log(res.data);
         pageData.requesting = false;
         // wx.hideNavigationBarLoading();
         if (type === 'refresh') {
@@ -66,6 +65,7 @@ Page({
           pageData.end = false;
           pageData.page = currentPage + 1;
         }
+        console.log(pageData.listData);
         this.setCurrentData(currentCur, pageData);
       }
     })
@@ -115,6 +115,21 @@ Page({
   // 加载更多
   more() {
     this.getList('more', this.getCurrentData(this.data.categoryCur).page);
+  },
+  // 作品喜欢点赞
+  zpLike(e) {
+    console.log(e.currentTarget.dataset.id);
+    console.log(e.currentTarget.dataset.index);
+    // let id = e.currentTarget.dataset.id;
+    let index = e.currentTarget.dataset.index;
+    let currentCur = this.data.categoryCur;
+    let pageData = this.getCurrentData(currentCur);
+    
+    pageData.listData[index].path = 'active';
+    pageData.listData[index].passtime = '2020';
+    console.log(pageData.listData[index]);
+    
+    this.setCurrentData(currentCur, pageData);
   },
   onLoad() {
     this.getList('refresh', pageStart);

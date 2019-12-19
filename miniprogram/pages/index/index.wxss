@@ -90,7 +90,6 @@ swiper image {
   font-size: 28rpx;
 }
 .index-article .sub {
-  display: -webkit-flex;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
@@ -125,7 +124,6 @@ swiper image {
   word-break: keep-all;
   word-wrap: normal;
   border-radius: 0 0 10rpx 10rpx;
-  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), transparent);
 }
 .index-article .article-ttl {
@@ -186,7 +184,6 @@ swiper image {
   text-align: center;
 }
 .index-list-ul {
-  display: -webkit-flex;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -210,7 +207,6 @@ swiper image {
   text-overflow: ellipsis;
 }
 .index-list-cnt {
-  display: -webkit-flex;
   display: flex;
   justify-content: space-between;
   align-items: center;

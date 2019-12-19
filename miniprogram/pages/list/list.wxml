@@ -1,4 +1,6 @@
 <!--miniprogram/pages/list/list.wxml-->
+<wxs module="util" src="../common/lib/util.wxs"></wxs>
+
 <view class="top-wrap">
   <tab id="category"
        tab-data="{{categoryMenu}}"
@@ -22,17 +24,17 @@
         <view class="types-zuopin-li"
               wx:for="{{item.listData}}"
               wx:key="index">
-          <navigator url="/pages/detail/detail">
+          <navigator url="/pages/detail/detail?id={{util.sub(item.passtime, 0, 4)}}&title={{item.title}}&time={{item.passtime}}&image={{item.image}}">
             <image class="types-zuopin-img" mode="aspectFill" src="{{item.image}}"></image>
           </navigator>
           <view class="types-zuopin-title">{{item.title}}</view>
           <view class="types-zuopin-cnt">
-            <view class="types-zuopin-author">{{item.title}}</view>
-            <view class="types-zuopin-lovenum">
-              <text class="types-zuopin-love" data-id="{{item.passtime}}"></text>
-              <text class="types-zuopin-num">{{item.passtime}}</text>
+            <view class="types-zuopin-author">{{util.sub(item.title, 0, 4)}}</view>
+            <view class="types-zuopin-lovenum" data-index="{{index}}" data-id="{{util.sub(item.passtime, 0, 4)}}" bindtap="zpLike">
+              <text class="types-zuopin-love {{item.path}}"></text>
+              <text class="types-zuopin-num">{{util.sub(item.passtime, 0, 4)}}</text>
             </view>
-            <navigator url="/pages/detail/detail">
+            <navigator url="/pages/detail/detail?id={{util.sub(item.passtime, 0, 4)}}">
               <image class="types-zuopin-head" mode="aspectFill" src="{{item.image}}"></image>
             </navigator>
           </view>

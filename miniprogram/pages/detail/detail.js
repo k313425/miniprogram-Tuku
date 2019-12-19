@@ -1,34 +1,42 @@
 // miniprogram/pages/detail/detail.js
 Page({
   data: {
-    list:['精选','新闻','电影','电视剧','综艺','少儿','体育','音乐','游戏'],
-    navScrollLeft: 10,
-    clickNumber: 0,
+    lazy: true,
+    id: 0,
+    like: '',
+    likenum: 0,
+    detail: {
+      title: '',
+      image: '',
+      time: ''
+    }
   },
-  //点击上方文字  切换
-  centerTap:function(event) {
-    //点击的偏移量
-    console.log(event);
-    var cur = event.detail.x;
-    console.log(cur);
-    //每个tab选项宽度占15%
-    var singleNavWidth = wx.getSystemInfoSync().windowWidth * 12 / 100;
-    console.log(singleNavWidth);
+  // 作品喜欢点赞
+  zpLike(e) {
+    console.log(e.currentTarget.dataset.id);
+    // let id = e.currentTarget.dataset.id;
+
     this.setData({
-      navScrollLeft: singleNavWidth,
-      clickNumber: parseInt(cur / singleNavWidth)
+      like: 'active',
+      likenum: 1
     })
+    
   },
-  changeSwipe:function(event) {
-    console.log(event);
-    var type =
-      event.detail.current;
+  outputSrc(e) {
+    // 只需查看本事件触发即可知道image 的加载情况
+    console.log(e)
+  },
+  
+  onLoad: function (options) {
+    let pageDetail = this.data.detail;
+    pageDetail.title = options.title;
+    pageDetail.image = options.image;
+    pageDetail.time = options.time;
     this.setData({
-      clickNumber: type
+      id: options.id,
+      detail: pageDetail
     });
-  },
   
-  onLoad: function () {
-  
+    console.log(this.data.detail);
   },
 });

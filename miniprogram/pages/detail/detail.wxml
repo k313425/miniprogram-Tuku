@@ -1,5 +1,7 @@
 <!--miniprogram/pages/detail/detail.wxml-->
-<view class="zuopin-head ">
+<page>
+</page>
+<view class="zuopin-head">
   <view class="zuopin-head-title">旅拍夜景</view>
   <navigator url="/pages/detail/detail">
     <image class="zuopin-head-img" src="/images/img-422_422.jpg"></image>
@@ -8,32 +10,34 @@
 </view>
 <view class="zuopin-cnt">
   <view class="zuopin-cnt-text">
-    美不胜收！
+    {{detail.title}}
   </view>
   <view class="zuopin-cnt-list">
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
-    <image class="zuopin-cnt-img" lazy-load="true" mode="aspectFit" src="/images/img-750_352.jpg"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
+    <image class="zuopin-cnt-img" lazy-load="{{true}}" mode="aspectFit" bindload="outputSrc" src="{{detail.image}}"></image>
   </view>
   <view class="zuopin-cnt-tag">
     <text>旅拍</text>
     <text>纪实</text>
   </view>
-  <view class="zuopin-cnt-time">2019-12-17 发布</view>
+  <view class="zuopin-cnt-time">{{detail.time}} 发布</view>
 </view>
 <view class="zuopin-love">
-  <view class="zuopin-love-circle">
-    <view class="zuopin-love-img "></view>
+  <view class="zuopin-love-circle" data-id="{{id}}" bindtap="zpLike">
+    <view class="zuopin-love-img {{like}}"></view>
   </view>
-  <view class="zuopin-love-num"><text>0</text>人 喜欢
+  <view class="zuopin-love-num"><text>{{likenum}}</text>人 喜欢
   </view>
 </view>
 <view class="zuopin-focus ">
@@ -56,4 +60,3 @@
   </navigator>
   <navigator url="/pages/detail/detail" class="zuopin-zuopin-go"></navigator>
 </view>
-

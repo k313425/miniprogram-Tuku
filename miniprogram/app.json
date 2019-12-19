@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/list/list",
     "pages/lists/lists",
     "pages/index/index",
@@ -40,6 +41,5 @@
     "downloadFile": 10000
   },
   "workers": "workers",
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }
