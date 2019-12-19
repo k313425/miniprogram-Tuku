@@ -1,7 +1,7 @@
 ## 黑光图库小程序
 
 1. 2019.12.10 文件结构
-	- image--icon公共图标
+	- images--icon公共图标
 	- components--组件库
 	- pages--页面
 		- login--登录
@@ -22,6 +22,16 @@
 **12.16 todo**
 
 列表组件???pp
+
+**12.17 todo**
+
+列表组件 swiper-list 
+
+组件库 iview-weapp
+
+**12.19 todo**
+
+登录注册
 
 
 ## 参考文档
