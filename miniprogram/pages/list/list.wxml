@@ -29,8 +29,8 @@
           <view class="types-zuopin-cnt">
             <view class="types-zuopin-author">{{item.title}}</view>
             <view class="types-zuopin-lovenum">
-              <text class="types-zuopin-love" data-id="125600"></text>
-              <text class="types-zuopin-num">0</text>
+              <text class="types-zuopin-love" data-id="{{item.passtime}}"></text>
+              <text class="types-zuopin-num">{{item.passtime}}</text>
             </view>
             <navigator url="/pages/detail/detail">
               <image class="types-zuopin-head" mode="aspectFill" src="{{item.image}}"></image>
