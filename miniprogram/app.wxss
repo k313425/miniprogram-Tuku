@@ -19,10 +19,9 @@ input {
   list-style: none;
 }
 .holderplace {
-  font-family: Monospaced Number, Chinese Quote, -apple-system, Microsoft YaHei, sans-serif;
+  font-family: navigator;
 }
 page {
-  font-family: Monospaced Number, Chinese Quote, -apple-system, Microsoft YaHei, sans-serif;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -33,5 +32,5 @@ page {
   border-top: 2rpx solid#f2f2f2;
   border-bottom: 20rpx solid rgb(246, 246, 246);
   transition: transform0.15sease-in-out;
-  background: 0 centerno-repeat;
+  background: 0centerno-repeat;
 }

@@ -1,0 +1,5 @@
+// 字符串截取
+var sub = function (val, start, end) {
+  return val.slice(start, end)
+};
+module.exports.sub = sub;
