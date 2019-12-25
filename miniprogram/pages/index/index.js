@@ -1,6 +1,6 @@
 //index.js
 const app = getApp();
-
+let pageStart = 1;
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -17,6 +17,74 @@ Page({
     vertical: false,
     autoplay: true,
     circular: true,
+    pageData: {
+      name: "推荐",
+      id: 1,
+      requesting: false,
+      end: false,
+      emptyShow: false,
+      page: pageStart,
+      listData: []
+    }
+  },
+  getList(currentPage) {
+    let pageData = this.getCurrentData();
+    pageData.requesting = true;
+    pageData.page = currentPage;
+    this.setCurrentData(pageData);
+    // wx.showNavigationBarLoading();
+    wx.request({
+      url: 'https://api.apiopen.top/getWangYiNews', //仅为示例，并非真实的接口地址
+      data: {
+        'id': pageData.id,
+        'page': pageData.page,
+        'count': 6
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      success: (res) => {
+        pageData.requesting = false;
+        // wx.hideNavigationBarLoading();
+        pageData.listData = pageData.listData.concat(res.data.result);
+        pageData.end = false;
+        pageData.page = currentPage + 1;
+        console.log(pageData);
+        this.setCurrentData(pageData);
+      }
+    })
+  },
+  setCurrentData(pageData) {
+    this.setData({
+      pageData: pageData
+    })
+  },
+  getCurrentData() {
+    return this.data.pageData
+  },
+  // 判断是否为加载新的页面,如果是去加载数据
+  loadData() {
+    let pageData = this.getCurrentData(this.data.categoryCur);
+    if (pageData.listData.length === 0) {
+      this.getList('refresh', pageStart);
+    }
+  },
+  // 加载更多
+  more() {
+    this.getList(this.getCurrentData().page);
+  },
+  zpLike(e) {
+    console.log(e.currentTarget.dataset.id);
+    console.log(e.currentTarget.dataset.index);
+    // let id = e.currentTarget.dataset.id;
+    let index = e.currentTarget.dataset.index;
+    let pageData = this.getCurrentData();
+    
+    pageData.listData[index].path = 'active';
+    pageData.listData[index].passtime = '2020';
+    console.log(pageData.listData[index]);
+    
+    this.setCurrentData(pageData);
   },
 
   onLoad: function() {
@@ -26,7 +94,8 @@ Page({
       });
       return
     }
-
+  
+    this.getList(pageStart);
     // 获取用户信息
     wx.getSetting({
       success: res => {

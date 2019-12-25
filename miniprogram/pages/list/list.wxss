@@ -1,5 +1,15 @@
 /* miniprogram/pages/list/list.wxss */
-.top-wrap {
+page {
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+}
+swiper {
+  height: 100vh;
+}
+
+/*types.html*/
+.types-wrap {
   position: fixed;
   left: 0;
   top: 0;
@@ -7,10 +17,6 @@
   background-color: #ffffff;
   z-index: 99;
 }
-swiper {
-  height: 100vh;
-}
-/*types.html*/
 .types-nav {
   padding: 0 20rpx;
   border-bottom: 2rpx solid #eee;
@@ -34,14 +40,16 @@ swiper {
 }
 .types-zuopin {
   padding: 0 20rpx;
+  /*display: block;*/
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  /*background-color: #09f;*/
 }
 .types-zuopin-li {
   position: relative;
   width: 336rpx;
-  margin: 20rpx 0;
+  padding: 20rpx 0;
 }
 .types-mark {
   position: absolute;
@@ -75,8 +83,8 @@ swiper {
   z-index: 1;
   width: 24rpx;
   height: 24rpx;
-  background: url(../images/tk-vip.png) 0 0 no-repeat;
-  background-size: 100% 100%;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACzUlEQVRYR+1Wy5EaQQyVoHquxhEsRLCbgSECsxEYItidA93FafGJ6uYAjsAQgXEEXkewOALjCIyvfEpbmuoe98zOMA2uMj6YG6CWnp6kJyFc+IMXjg//LoDJZNImoncA0HMsEdG6VqvN9/v9Yjgcrn32xuNxs1ar3QFAFxGb9r8NACwRcTEYDB6L2C5kQGs9R0QO7j4/AODK+86OYynlnH/TWt8j4gMANPg7Ef1CRLZJ3xDRTCkV50G8AKC1XiHiNQBw0JEQYhnHMTsDm+XIA9e3Dj9yUACYRVE0c/bT6bSx2+26HBwRXwHAXErp3iRPMwCMMTMAuCOib1EUtZ2jPGpjzA0RPVqnLuO2lHJVRDMD2W63bH9NRO+VUiNnlwLg7Or1+nfOXAhxUxbcPdRac60/JVkgdspq7Owte8wuCSFazn8KwGUPAH1X26oRNcZwY22klN0qW9srXL4HIoqVUsz27xK42kspg0eTqWUnVWw5cLYnfgLAVyllOwPAGEP+HyEZnWNjE72SUr6+CABbtjeOab8H/goDxpg1ETWUUkn5UgB5as6ht+pNVQ8kGnDKFFQFLNAPlnUWrZdT4HSA9V4p1TrVeYg908/yfDgcWm6XZEbO7QAfYYjjEButtdOAhVIqXXAZAL5aAUCnTFpDAvo2LN0A8MT7Ioqipq8bRcuIN9sUAFZCiE6oyJSBsnvgiVc0Ed0qpZa+baHqGWPY6C0RLZVSt6dm7Nt72/WDlPI+76sQgL+9ilZoKCDvrkilNwgAG/0pCK+hj672o4vnXBChwTNKWNFEyTHB5RBCxGWNaZXuCwDwwXI0cxcvaPXmmCicjnOCBzHg73J3VvGIWslOTjA755w5L5jPQohe6PgGMZAbK3cxb4ioj4gclHWjQUQZlQuZlpMBsFMnq7kAwadcpRCFIOejlJuS739E7FUdpWU+z2IgBGCozX8Az5vpnzBxknaPAAAAAElFTkSuQmCC') 0 0 no-repeat;
+  background-size: 24rpx 24rpx;
 }
 .types-zuopin-author {
   padding: 20rpx 0;

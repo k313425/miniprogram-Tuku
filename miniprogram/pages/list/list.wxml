@@ -1,11 +1,11 @@
 <!--miniprogram/pages/list/list.wxml-->
 <wxs module="util" src="../common/lib/util.wxs"></wxs>
 
-<view class="top-wrap">
+<view class="types-wrap">
   <tab id="category"
        tab-data="{{categoryMenu}}"
        tab-cur="{{categoryCur}}"
-       size="{{100}}"
+       size="{{80}}"
        bindchange="toggleCategory">
   </tab>
 </view>
@@ -17,7 +17,7 @@
             empty-show="{{item.emptyShow}}"
             list-count="{{item.listData.length}}"
             has-top="{{true}}"
-            refresh-size="{{100}}"
+            refresh-size="{{80}}"
             bind:refresh="refresh"
             bind:more="more">
       <view class="types-zuopin">

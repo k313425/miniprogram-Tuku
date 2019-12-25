@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "文章",
   "backgroundTextStyle": "dark",
-  "usingComponents": {}
+  "usingComponents": {
+    "tab": "/components/tab/index",
+    "scroll": "/components/scroll/index"
+  }
 }

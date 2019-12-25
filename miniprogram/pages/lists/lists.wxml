@@ -1,124 +1,36 @@
-<!--miniprogram/pages/lists/lists.wxml-->
-<view class="types-nav">
-  <scroll-view scroll-x="true" class="types-nav-ul" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
-    <block wx:for="{{navInfo.nav}}" wx:key="index">
-      <text class="{{clickNumber==index?'active':''}}" data-i="{{item.id}}" data-lurl="{{item.lurl}}" bindtap='centerTap'>{{item.val}}</text>
-    </block>
-  </scroll-view>
+<view class="top-wrap">
+  <tab id="category"
+       tab-data="{{categoryMenu}}"
+       tab-cur="{{categoryCur}}"
+       size="{{80}}"
+       scroll="{{true}}"
+       bindchange="toggleCategory">
+  </tab>
 </view>
-<swiper
-  current='{{clickNumber}}'
-  bindchange='changeSwipe'
-  autoplay="{{navInfo.autoplay}}"
-  circular="{{navInfo.circular}}"
-  vertical="{{navInfo.vertical}}"
-  interval="3000"
-  duration="300" id="swiper" class="types-cnt swiper-container">
-  <block wx:for="{{navInfo.nav}}" wx:key="index">
-    <swiper-item>
-      <scroll-view
-        scroll-y="true"
-        bindscrolltolower="lower" class="swiper-slide">
-        <view class="types-zuopin">
-          <view class="types-zuopin-li">
-            <navigator url="/pages/detail/detail">
-              <image class="types-zuopin-img" src="/images/img-422_422.jpg"></image>
-            </navigator>
-            <view class="types-zuopin-title">圣诞系列</view>
-            <view class="types-zuopin-cnt">
-              <view class="types-zuopin-author">叶青春</view>
-              <view class="types-zuopin-lovenum">
-                <text class="types-zuopin-love" data-id="125600"></text>
-                <text class="types-zuopin-num">0</text>
-              </view>
-              <navigator url="/pages/detail/detail">
-                <image class="types-zuopin-head" src="/images/img-424_308.jpg"></image>
-              </navigator>
-            </view>
+
+<swiper current="{{categoryCur}}" duration="{{duration}}" bindanimationfinish="swipeChange">
+  <swiper-item wx:for="{{categoryData}}" wx:key="{{index}}">
+    <scroll requesting="{{item.requesting}}"
+            end="{{item.end}}"
+            empty-show="{{item.emptyShow}}"
+            list-count="{{item.listData.length}}"
+            has-top="{{true}}"
+            refresh-size="{{80}}"
+            bind:refresh="refresh"
+            bind:more="more">
+      <view class="cells">
+        <view class="cell"
+              wx:for="{{item.listData}}"
+              wx:key="{{index}}">
+          <view class="cell__hd">
+            <image mode="aspectFill" src="{{item.images}}" alt=""/>
           </view>
-          <view class="types-zuopin-li">
-            <navigator url="/pages/detail/detail">
-              <image class="types-zuopin-img" src="/images/img-422_422.jpg"></image>
-            </navigator>
-            <view class="types-zuopin-title">圣诞系列</view>
-            <view class="types-zuopin-cnt">
-              <view class="types-zuopin-author">叶青春</view>
-              <view class="types-zuopin-lovenum">
-                <text class="types-zuopin-love" data-id="125600"></text>
-                <text class="types-zuopin-num">0</text>
-              </view>
-              <navigator url="/pages/detail/detail">
-                <image class="types-zuopin-head" src="/images/img-424_308.jpg"></image>
-              </navigator>
-            </view>
-          </view>
-          <view class="types-zuopin-li">
-            <navigator url="/pages/detail/detail">
-              <image class="types-zuopin-img" src="/images/img-422_422.jpg"></image>
-            </navigator>
-            <view class="types-zuopin-title">圣诞系列</view>
-            <view class="types-zuopin-cnt">
-              <view class="types-zuopin-author">叶青春</view>
-              <view class="types-zuopin-lovenum">
-                <text class="types-zuopin-love" data-id="125600"></text>
-                <text class="types-zuopin-num">0</text>
-              </view>
-              <navigator url="/pages/detail/detail">
-                <image class="types-zuopin-head" src="/images/img-424_308.jpg"></image>
-              </navigator>
-            </view>
-          </view>
-          <view class="types-zuopin-li">
-            <navigator url="/pages/detail/detail">
-              <image class="types-zuopin-img" src="/images/img-422_422.jpg"></image>
-            </navigator>
-            <view class="types-zuopin-title">圣诞系列</view>
-            <view class="types-zuopin-cnt">
-              <view class="types-zuopin-author">叶青春</view>
-              <view class="types-zuopin-lovenum">
-                <text class="types-zuopin-love" data-id="125600"></text>
-                <text class="types-zuopin-num">0</text>
-              </view>
-              <navigator url="/pages/detail/detail">
-                <image class="types-zuopin-head" src="/images/img-424_308.jpg"></image>
-              </navigator>
-            </view>
-          </view>
-          <view class="types-zuopin-li">
-            <navigator url="/pages/detail/detail">
-              <image class="types-zuopin-img" src="/images/img-422_422.jpg"></image>
-            </navigator>
-            <view class="types-zuopin-title">圣诞系列</view>
-            <view class="types-zuopin-cnt">
-              <view class="types-zuopin-author">叶青春</view>
-              <view class="types-zuopin-lovenum">
-                <text class="types-zuopin-love" data-id="125600"></text>
-                <text class="types-zuopin-num">0</text>
-              </view>
-              <navigator url="/pages/detail/detail">
-                <image class="types-zuopin-head" src="/images/img-424_308.jpg"></image>
-              </navigator>
-            </view>
-          </view>
-          <view class="types-zuopin-li">
-            <navigator url="/pages/detail/detail">
-              <image class="types-zuopin-img" src="/images/img-422_422.jpg"></image>
-            </navigator>
-            <view class="types-zuopin-title">圣诞系列</view>
-            <view class="types-zuopin-cnt">
-              <view class="types-zuopin-author">叶青春</view>
-              <view class="types-zuopin-lovenum">
-                <text class="types-zuopin-love" data-id="125600"></text>
-                <text class="types-zuopin-num">0</text>
-              </view>
-              <navigator url="/pages/detail/detail">
-                <image class="types-zuopin-head" src="/images/img-424_308.jpg"></image>
-              </navigator>
-            </view>
+          <view class="cell__bd">
+            <view class="name">{{item.title}}</view>
+            <view class="des">{{item.description}}</view>
           </view>
         </view>
-      </scroll-view>
-    </swiper-item>
-  </block>
+      </view>
+    </scroll>
+  </swiper-item>
 </swiper>
-

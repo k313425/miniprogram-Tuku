@@ -24,7 +24,7 @@ Component({
     // 空状态的图片
     emptyUrl: {
       type: String,
-      value: "/assets/image/empty/empty.png"
+      value: "/images/empty/empty.png"
     },
     // 空状态的文字提示
     emptyText: {
@@ -64,9 +64,11 @@ Component({
     successShow: false, // 显示success
     successTran: false, // 过度success
     refreshStatus: 1, // 1: 下拉刷新, 2: 松开更新, 3: 加载中, 4: 加载完成
-    move: -45, // movable-view 偏移量
-    scrollHeight: 0, // refresh view 高度负值
-    heightScroll: 0, // refresh view - success view 高度负值
+    move: -60, // movable-view 偏移量
+    scrollHeight1: 0, // refresh view 高度负值
+    scrollHeight2: 0, // refresh view - success view 高度负值
+    timer: null,
+    
     /* 渲染数据 */
     scrollTop: 0,
     overOnePage: false
@@ -75,12 +77,19 @@ Component({
     /**
      * 处理 bindscrolltolower 失效情况
      */
-    scroll(e) {
+    bindscroll(e) {
       // 可以触发滚动表示超过一屏
       this.setData({
-        overOnePage: true,
-        scrollTop: e.detail.scrollTop
-      })
+        overOnePage: true
+      });
+      clearTimeout(this.data.timer);
+      this.setData({
+        timer: setTimeout(() => {
+          this.setData({
+            scrollTop: e.detail.scrollTop
+          })
+        }, 100)
+      });
     },
     /**
      * movable-view 滚动监听
@@ -88,7 +97,9 @@ Component({
     change(e) {
       let refreshStatus = this.data.refreshStatus,
         diff = e.detail.y;
+      
       if (refreshStatus >= 3) return;
+      
       if (diff > -10) {
         this.setData({
           refreshStatus: 2
@@ -104,7 +115,9 @@ Component({
      */
     touchend() {
       let refreshStatus = this.data.refreshStatus;
+      
       if (refreshStatus >= 3) return;
+      
       if (refreshStatus === 2) {
         wx.vibrateShort();
         this.setData({
@@ -115,7 +128,7 @@ Component({
         this.triggerEvent('refresh');
       } else if (refreshStatus === 1) {
         this.setData({
-          move: this.data.scrollHeight
+          move: this.data.scrollHeight1
         });
       }
     },
@@ -135,24 +148,25 @@ Component({
      */
     requestingEnd(newVal, oldVal) {
       if (this.data.mode === 'more') return;
+      
       if (oldVal === true && newVal === false) {
         setTimeout(() => {
           this.setData({
             successShow: true,
             refreshStatus: 4,
-            move: this.data.heightScroll
+            move: this.data.scrollHeight2
           });
           setTimeout(() => {
             this.setData({
               successTran: true,
-              move: this.data.scrollHeight
+              move: this.data.scrollHeight1
             });
             setTimeout(() => {
               this.setData({
                 refreshStatus: 1,
                 successShow: false,
                 successTran: false,
-                move: this.data.scrollHeight
+                move: this.data.scrollHeight1
               });
             }, 350)
           }, 1500)
@@ -184,11 +198,14 @@ Component({
     init() {
       let {windowWidth} = wx.getSystemInfoSync();
       let successHeight = (windowWidth || 375) / 750 * 70;
+      
       this.createSelectorQuery().select("#refresh").boundingClientRect((res) => {
         this.setData({
-          scrollHeight: -res.height,
-          heightScroll: successHeight - res.height
+          scrollHeight1: -res.height,
+          scrollHeight2: successHeight - res.height
         });
+        console.log(this.data.scrollHeight1);
+        console.log(this.data.scrollHeight2)
       }).exec();
     },
   },

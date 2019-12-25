@@ -1,11 +1,14 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/list/list",
     "pages/lists/lists",
+
     "pages/index/index",
+
     "pages/works/works",
-    "pages/detail/detail"
+    "pages/detail/detail",
+
+    "pages/login/login"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -31,6 +34,12 @@
         "iconPath": "images/icon/icon_List.png",
         "selectedIconPath": "images/icon/icon_List_HL.png",
         "text": "文章"
+      },
+      {
+        "pagePath": "pages/lists/lists",
+        "iconPath": "images/icon/icon_List.png",
+        "selectedIconPath": "images/icon/icon_List_HL.png",
+        "text": "文章2"
       }
     ]
   },

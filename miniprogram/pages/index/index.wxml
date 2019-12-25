@@ -1,126 +1,156 @@
-<import src="/pages/common/head.wxml" />
-<import src="/pages/common/foot.wxml" />
+<import src="/pages/common/head.wxml"/>
+<import src="/pages/common/foot.wxml"/>
+<wxs module="util" src="../common/lib/util.wxs"></wxs>
+
 <!--index.wxml-->
 <view class="container">
-
-  <!-- <template is="head" data="{{title: 'button',desc: 'button'}}" /> -->
-
-  <view class="index-banner">
-    <swiper 
-      autoplay="{{autoplay}}"
-      circular="{{circular}}"
-      vertical="{{vertical}}"
-      interval="3000"
-      duration="300">
-      <block wx:for="{{background}}" wx:key="index">
-        <swiper-item>
-          <navigator url="/pages/detail/detail?id=488"><image class="index-banner-img" src="{{item}}"></image></navigator>
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
-  <view class="index-types">
-    <view class="swiper-slide">
-      <navigator url="/pages/works/works"><text>婚纱摄影</text><image src="/images/img-260_140.jpg"></image></navigator>
+  <scroll requesting="{{pageData.requesting}}"
+          end="{{pageData.end}}"
+          empty-show="{{pageData.emptyShow}}"
+          list-count="{{pageData.listData.length}}"
+          has-top="{{false}}"
+          refresh-size="{{80}}"
+          bind:refresh="more"
+          bind:more="more">
+    
+    <!-- <template is="head" data="{{title: 'button',desc: 'button'}}" /> -->
+    
+    <view class="index-banner">
+      <swiper
+        autoplay="{{autoplay}}"
+        circular="{{circular}}"
+        vertical="{{vertical}}"
+        interval="3000"
+        duration="300">
+        <block wx:for="{{background}}" wx:key="index">
+          <swiper-item>
+            <navigator url="/pages/detail/detail?id=488">
+              <image class="index-banner-img" src="{{item}}"></image>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
     </view>
-    <view class="swiper-slide">
-      <navigator url="/pages/works/works"><text>写真摄影</text><image src="/images/img-260_140.jpg"></image></navigator>
-    </view>
-    <view class="swiper-slide">
-      <navigator url="/pages/works/works"><text>儿童摄影</text><image src="/images/img-260_140.jpg"></image></navigator>
-    </view>
-    <view class="swiper-slide">
-      <navigator url="/pages/works/works"><text>婚礼跟拍</text><image src="/images/img-260_140.jpg"></image></navigator>
-    </view>
-    <view class="swiper-slide">
-      <navigator url="/pages/works/works"><text>化妆造型</text><image src="/images/img-260_140.jpg"></image></navigator>
-    </view>
-    <view class="swiper-slide">
-      <navigator url="/pages/works/works"><text>数码后期</text><image src="/images/img-260_140.jpg"></image></navigator>
-    </view>
-  </view>
-  <!--活动-->
-  <view class="index-shi">
-    <view class="index-shi-title">活动 <navigator url="">MORE ></navigator></view>
-    <navigator url="/pages/works/works"><image src="/images/img-750_352.jpg"></image></navigator>
-    <view class="index-shi-text">2019黑光图库“我要上封面”作品征集</view>
-    <view class="index-shi-time">距截稿：0天</view>
-  </view>
-  <!--文章-->
-  <view class="index-article">
-    <view class="ttl">推荐文章 <navigator url="">MORE ></navigator></view>
-    <view class="sub">
-      <navigator url="/pages/detail/detail">
-        <image src="/images/img-424_308.jpg"></image>
-        <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
-      </navigator>
-      <navigator url="/pages/detail/detail">
-        <image src="/images/img-424_308.jpg"></image>
-        <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
-      </navigator>
-      <navigator url="/pages/detail/detail">
-        <image src="/images/img-424_308.jpg"></image>
-        <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
-      </navigator>
-      <navigator url="/pages/detail/detail">
-        <image src="/images/img-424_308.jpg"></image>
-        <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
-      </navigator>
-      <navigator url="/pages/detail/detail">
-        <image src="/images/img-424_308.jpg"></image>
-        <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
-      </navigator>
-      <navigator url="/pages/detail/detail">
-        <image src="/images/img-424_308.jpg"></image>
-        <view><text class="article-ttl">自由摄影师童心</text><text class="num">456</text></view>
-      </navigator>
-    </view>
-  </view>
-  <view class="index-list">
-    <view class="index-list-hd"></view>
-    <view class="index-list-bd">
-      <view class="index-list-ul" id="dataList">
-        <view class="index-list-li">
-          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
-          <view class="index-list-title">一起去旅行</view>
-          <view class="index-list-cnt">
-            <text class="index-list-author">自由摄影师童心</text>
-            <text class="index-list-num">456</text>
-          </view>
-        </view>
-        <view class="index-list-li">
-          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
-          <view class="index-list-title">一起去旅行</view>
-          <view class="index-list-cnt">
-            <text class="index-list-author">自由摄影师童心</text>
-            <text class="index-list-num">456</text>
-          </view>
-        </view>
-        <view class="index-list-li">
-          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
-          <view class="index-list-title">一起去旅行</view>
-          <view class="index-list-cnt">
-            <text class="index-list-author">自由摄影师童心</text>
-            <text class="index-list-num">456</text>
-          </view>
-        </view>
-        <view class="index-list-li">
-          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
-          <view class="index-list-title">一起去旅行</view>
-          <view class="index-list-cnt">
-            <text class="index-list-author">自由摄影师童心</text>
-            <text class="index-list-num">456</text>
-          </view>
-        </view>
-        <view class="index-list-li">
-          <navigator url="/pages/detail/detail"><image src="/images/img-424_308.jpg" class="index-list-img"></image></navigator>
-          <view class="index-list-title">一起去旅行</view>
-          <view class="index-list-cnt">
-            <text class="index-list-author">自由摄影师童心</text>
-            <text class="index-list-num">456</text>
-          </view>
-        </view>
+    <view class="index-types">
+      <view class="swiper-slide">
+        <navigator url="/pages/works/works">
+          <text>婚纱摄影</text>
+          <image src="/images/img-260_140.jpg"></image>
+        </navigator>
+      </view>
+      <view class="swiper-slide">
+        <navigator url="/pages/works/works">
+          <text>写真摄影</text>
+          <image src="/images/img-260_140.jpg"></image>
+        </navigator>
+      </view>
+      <view class="swiper-slide">
+        <navigator url="/pages/works/works">
+          <text>儿童摄影</text>
+          <image src="/images/img-260_140.jpg"></image>
+        </navigator>
+      </view>
+      <view class="swiper-slide">
+        <navigator url="/pages/works/works">
+          <text>婚礼跟拍</text>
+          <image src="/images/img-260_140.jpg"></image>
+        </navigator>
+      </view>
+      <view class="swiper-slide">
+        <navigator url="/pages/works/works">
+          <text>化妆造型</text>
+          <image src="/images/img-260_140.jpg"></image>
+        </navigator>
+      </view>
+      <view class="swiper-slide">
+        <navigator url="/pages/works/works">
+          <text>数码后期</text>
+          <image src="/images/img-260_140.jpg"></image>
+        </navigator>
       </view>
     </view>
-  </view>
+    <!--活动-->
+    <view class="index-shi">
+      <view class="index-shi-title">活动
+        <navigator url="">MORE ></navigator>
+      </view>
+      <navigator url="/pages/works/works">
+        <image src="/images/img-750_352.jpg"></image>
+      </navigator>
+      <view class="index-shi-text">2019黑光图库“我要上封面”作品征集</view>
+      <view class="index-shi-time">距截稿：0天</view>
+    </view>
+    <!--文章-->
+    <view class="index-article">
+      <view class="ttl">推荐文章
+        <navigator url="">MORE ></navigator>
+      </view>
+      <view class="sub">
+        <navigator url="/pages/detail/detail">
+          <image src="/images/img-424_308.jpg"></image>
+          <view>
+            <text class="article-ttl">自由摄影师童心</text>
+            <text class="num">456</text>
+          </view>
+        </navigator>
+        <navigator url="/pages/detail/detail">
+          <image src="/images/img-424_308.jpg"></image>
+          <view>
+            <text class="article-ttl">自由摄影师童心</text>
+            <text class="num">456</text>
+          </view>
+        </navigator>
+        <navigator url="/pages/detail/detail">
+          <image src="/images/img-424_308.jpg"></image>
+          <view>
+            <text class="article-ttl">自由摄影师童心</text>
+            <text class="num">456</text>
+          </view>
+        </navigator>
+        <navigator url="/pages/detail/detail">
+          <image src="/images/img-424_308.jpg"></image>
+          <view>
+            <text class="article-ttl">自由摄影师童心</text>
+            <text class="num">456</text>
+          </view>
+        </navigator>
+        <navigator url="/pages/detail/detail">
+          <image src="/images/img-424_308.jpg"></image>
+          <view>
+            <text class="article-ttl">自由摄影师童心</text>
+            <text class="num">456</text>
+          </view>
+        </navigator>
+        <navigator url="/pages/detail/detail">
+          <image src="/images/img-424_308.jpg"></image>
+          <view>
+            <text class="article-ttl">自由摄影师童心</text>
+            <text class="num">456</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="index-list">
+      <view class="index-list-hd"></view>
+      <view class="index-list-bd">
+        
+        <view class="index-list-ul">
+          <view class="index-list-li"
+                wx:for="{{pageData.listData}}"
+                wx:key="index">
+            <navigator
+              url="/pages/detail/detail?id={{util.sub(item.passtime, 0, 4)}}&title={{item.title}}&time={{item.passtime}}&image={{item.image}}">
+              <image class="index-list-img" mode="aspectFill" src="{{item.image}}"></image>
+            </navigator>
+            <view class="index-list-title">{{item.title}}</view>
+            <view class="index-list-cnt">
+              <text class="index-list-author">{{util.sub(item.title, 0, 4)}}</text>
+              <text class="index-list-num {{item.path}}" data-index="{{index}}" data-id="{{util.sub(item.passtime, 0, 4)}}" bindtap="zpLike">{{util.sub(item.passtime, 0, 4)}}</text>
+            </view>
+          </view>
+        </view>
+      
+      </view>
+    </view>
+  </scroll>
 </view>

@@ -48,7 +48,7 @@ Page({
       data: {
         'id': pageData.id,
         'page': pageData.page,
-        'count': 6
+        'count': 10
       },
       header: {
         'content-type': 'application/json', // 默认值
