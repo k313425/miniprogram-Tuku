@@ -8,26 +8,26 @@
   height: calc(100vh + 90rpx);
   overflow: hidden;
 }
-.scroll__view {
+.scroll-view {
   height: 100%;
   overflow: hidden;
   overflow-anchor: auto;
   position: relative;
   box-sizing: border-box;
 }
-.scroll__refresh {
+.scroll-refresh {
   height: 80rpx;
   position: relative;
 }
-.scroll__refresh--hidden {
+.scroll-refresh_hidden {
   visibility: hidden;
 }
-.scroll__bottom {
+.scroll-bottom {
   position: relative;
   height: 40rpx;
   padding: 40rpx 0;
 }
-.scroll__loading {
+.scroll-loading {
   position: absolute;
   top: 50%;
   left: 0;
@@ -38,7 +38,7 @@
   color: #000;
   line-height: 40rpx;
 }
-.scroll__loading .text {
+.scroll-loading .text {
   display: inline-block;
   vertical-align: middle;
 }
@@ -78,14 +78,14 @@
   z-index: 1;
   color: #ffffff;
 }
-.success--show {
+.success_show {
   opacity: 1;
   transform: scale(1);
 }
-.success--show:after {
+.success_show:after {
   transform: scaleX(1);
 }
-.success--tran {
+.success_tran {
   opacity: 0;
   transform: translateY(-100%);
   transition: opacity 0.35s linear, transform 0.35s linear;
@@ -95,12 +95,12 @@
   padding: 30rpx;
   text-align: center;
 }
-.empty__image {
+.empty-image {
   width: 200rpx;
   height: 200rpx;
   margin: 160rpx auto 60rpx;
 }
-.empty__text {
+.empty-text {
   color: #999999;
 }
 

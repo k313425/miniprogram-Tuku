@@ -1,6 +1,6 @@
 <view>
   <view id="success"
-        class="success {{successShow ? 'success--show' : ''}} {{successTran ? 'success--tran' : ''}}"
+        class="success {{successShow ? 'success_show' : ''}} {{successTran ? 'success_tran' : ''}}"
         style="top: {{hasTop ? refreshSize : 0}}rpx;color: {{color}}">
     <view class="info">刷新成功</view>
   </view>
@@ -14,7 +14,7 @@
       disabled="{{refreshStatus >= 3}}"
       y='{{move}}'>
       <scroll-view
-        class="scroll__view"
+        class="scroll-view"
         style="padding-bottom: {{bottomSize}}rpx;padding-top: {{ hasTop ? refreshSize : 0}}rpx;"
         scroll-y="{{refreshStatus == 1}}"
         bindscroll="bindscroll"
@@ -24,9 +24,9 @@
         lower-threshold="{{550}}rpx"
         bindscrolltolower="more">
         <view id="refresh"
-              class="scroll__refresh {{successShow ? 'scroll__refresh--hidden' : ''}}"
+              class="scroll-refresh {{successShow ? 'scroll-refresh_hidden' : ''}}"
               style="height: {{refreshSize}}rpx;padding: 20rpx 0;">
-          <view class="scroll__loading">
+          <view class="scroll-loading">
             <view wx:if="{{refreshStatus == 1 || refreshStatus == 2}}" class="{{refreshStatus == 2 ? 'rotate' : ''}} arrow"></view>
             <view wx:if="{{refreshStatus == 3}}" class="loading"></view>
             <view class="text" wx:if="{{refreshStatus == 1}}">下拉刷新</view>
@@ -36,14 +36,14 @@
         </view>
         <slot></slot>
         <view wx:if="{{listCount === 0 && emptyShow}}" class="empty">
-          <image class="empty__image" src="{{emptyUrl}}"></image>
-          <view class="empty__text">{{emptyText}}</view>
+          <image class="empty-image" src="{{emptyUrl}}"></image>
+          <view class="empty-text">{{emptyText}}</view>
         </view>
-        <view wx:if="{{listCount !== 0 && overOnePage}}" class="scroll__bottom">
-          <view class="scroll__loading" wx:if="{{end}}">
+        <view wx:if="{{listCount !== 0 && overOnePage}}" class="scroll-bottom">
+          <view class="scroll-loading" wx:if="{{end}}">
             已全部加载
           </view>
-          <view class="scroll__loading" wx:else>
+          <view class="scroll-loading" wx:else>
             <view class="loading"></view>
             <view class="text">加载中...</view>
           </view>

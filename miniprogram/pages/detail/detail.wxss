@@ -233,9 +233,8 @@
   position: absolute;
   right: 0;
   top: 16rpx;
-  max-width: 130rpx;
+  width: 130rpx;
   height: 48rpx;
-  min-height: 48rpx!important;
   border: none;
   outline: none;
   border-radius: 24rpx;

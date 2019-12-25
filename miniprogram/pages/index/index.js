@@ -28,18 +28,16 @@ Page({
     }
   },
   getList(currentPage) {
-    
     let pageData = this.getCurrentData();
-    console.log(pageData);
-    console.log(currentPage);
     if (pageData.page > 5) {
+      console.log(pageData.page);
       pageData.end = true;
       this.setCurrentData(pageData);
       return false
     }
     pageData.requesting = true;
     pageData.page = currentPage;
-    // this.setCurrentData(pageData);
+    this.setCurrentData(pageData);
     // wx.showNavigationBarLoading();
     wx.request({
       url: 'https://api.apiopen.top/getWangYiNews', //仅为示例，并非真实的接口地址
@@ -74,27 +72,20 @@ Page({
     this.getList(this.getCurrentData().page);
   },
   zpLike(e) {
-    console.log(e.currentTarget.dataset.id);
-    console.log(e.currentTarget.dataset.index);
     // let id = e.currentTarget.dataset.id;
     let index = e.currentTarget.dataset.index;
     let pageData = this.getCurrentData();
-    
     pageData.listData[index].path = 'active';
     pageData.listData[index].passtime = '2020';
-    console.log(pageData.listData[index]);
-    
     this.setCurrentData(pageData);
   },
-
-  onLoad: function() {
+  onLoad: function () {
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
       });
       return
     }
-  
     this.getList(pageStart);
     // 获取用户信息
     wx.getSetting({
@@ -113,12 +104,10 @@ Page({
       }
     })
   },
-  
-  onReachBottom: function() {
+  onReachBottom: function () {
     this.more();
   },
-
-  onGetUserInfo: function(e) {
+  onGetUserInfo: function (e) {
     if (!this.data.logged && e.detail.userInfo) {
       this.setData({
         logged: true,
@@ -127,8 +116,7 @@ Page({
       })
     }
   },
-
-  onGetOpenid: function() {
+  onGetOpenid: function () {
     // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
@@ -148,7 +136,6 @@ Page({
       }
     })
   },
-
   /**
    * 上传图片
    */
@@ -159,13 +146,10 @@ Page({
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
-
         wx.showLoading({
           title: '上传中',
         });
-
         const filePath = res.tempFilePaths[0];
-        
         // 上传图片
         const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0];
         wx.cloud.uploadFile({
@@ -173,11 +157,9 @@ Page({
           filePath,
           success: res => {
             console.log('[上传文件] 成功：', res);
-
             app.globalData.fileID = res.fileID;
             app.globalData.cloudPath = cloudPath;
             app.globalData.imagePath = filePath;
-            
             wx.navigateTo({
               url: '../storageConsole/storageConsole'
             })
@@ -193,19 +175,15 @@ Page({
             wx.hideLoading()
           }
         })
-
       },
       fail: e => {
         console.error(e)
       }
     })
   },
-  
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
   }
-
 });
