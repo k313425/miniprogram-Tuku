@@ -28,10 +28,18 @@ Page({
     }
   },
   getList(currentPage) {
+    
     let pageData = this.getCurrentData();
+    console.log(pageData);
+    console.log(currentPage);
+    if (pageData.page > 5) {
+      pageData.end = true;
+      this.setCurrentData(pageData);
+      return false
+    }
     pageData.requesting = true;
     pageData.page = currentPage;
-    this.setCurrentData(pageData);
+    // this.setCurrentData(pageData);
     // wx.showNavigationBarLoading();
     wx.request({
       url: 'https://api.apiopen.top/getWangYiNews', //仅为示例，并非真实的接口地址
@@ -49,7 +57,6 @@ Page({
         pageData.listData = pageData.listData.concat(res.data.result);
         pageData.end = false;
         pageData.page = currentPage + 1;
-        console.log(pageData);
         this.setCurrentData(pageData);
       }
     })
@@ -61,13 +68,6 @@ Page({
   },
   getCurrentData() {
     return this.data.pageData
-  },
-  // 判断是否为加载新的页面,如果是去加载数据
-  loadData() {
-    let pageData = this.getCurrentData(this.data.categoryCur);
-    if (pageData.listData.length === 0) {
-      this.getList('refresh', pageStart);
-    }
   },
   // 加载更多
   more() {
@@ -112,6 +112,10 @@ Page({
         }
       }
     })
+  },
+  
+  onReachBottom: function() {
+    this.more();
   },
 
   onGetUserInfo: function(e) {

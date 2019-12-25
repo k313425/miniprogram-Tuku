@@ -204,8 +204,6 @@ Component({
           scrollHeight1: -res.height,
           scrollHeight2: successHeight - res.height
         });
-        console.log(this.data.scrollHeight1);
-        console.log(this.data.scrollHeight2)
       }).exec();
     },
   },

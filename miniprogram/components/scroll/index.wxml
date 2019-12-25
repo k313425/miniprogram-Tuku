@@ -8,8 +8,8 @@
     <movable-view
       class="scroll"
       style="height: calc(100vh + 40rpx + {{refreshSize}}rpx)"
-      bind:change="change"
-      bind:touchend="touchend"
+      bindchange="change"
+      bindtouchend="touchend"
       direction="vertical"
       disabled="{{refreshStatus >= 3}}"
       y='{{move}}'>

@@ -65,7 +65,6 @@ Page({
           pageData.end = false;
           pageData.page = currentPage + 1;
         }
-        console.log(pageData.listData);
         this.setCurrentData(currentCur, pageData);
       }
     })

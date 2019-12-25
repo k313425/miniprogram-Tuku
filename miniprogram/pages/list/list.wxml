@@ -18,8 +18,8 @@
             list-count="{{item.listData.length}}"
             has-top="{{true}}"
             refresh-size="{{80}}"
-            bind:refresh="refresh"
-            bind:more="more">
+            bindrefresh="refresh"
+            bindmore="more">
       <view class="types-zuopin">
         <view class="types-zuopin-li"
               wx:for="{{item.listData}}"

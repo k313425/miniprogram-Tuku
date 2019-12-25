@@ -4,14 +4,6 @@
 
 <!--index.wxml-->
 <view class="container">
-  <scroll requesting="{{pageData.requesting}}"
-          end="{{pageData.end}}"
-          empty-show="{{pageData.emptyShow}}"
-          list-count="{{pageData.listData.length}}"
-          has-top="{{false}}"
-          refresh-size="{{80}}"
-          bind:refresh="more"
-          bind:more="more">
     
     <!-- <template is="head" data="{{title: 'button',desc: 'button'}}" /> -->
     
@@ -149,8 +141,16 @@
             </view>
           </view>
         </view>
+        <view class="scroll__bottom">
+          <view class="scroll__loading" wx:if="{{pageData.end}}">
+            已全部加载
+          </view>
+          <view class="scroll__loading" wx:else>
+            <view class="loading"></view>
+            <view class="text">加载中...</view>
+          </view>
+        </view>
       
       </view>
     </view>
-  </scroll>
 </view>

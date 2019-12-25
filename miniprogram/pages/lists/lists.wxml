@@ -16,8 +16,8 @@
             list-count="{{item.listData.length}}"
             has-top="{{true}}"
             refresh-size="{{80}}"
-            bind:refresh="refresh"
-            bind:more="more">
+            bindrefresh="refresh"
+            bindmore="more">
       <view class="cells">
         <view class="cell"
               wx:for="{{item.listData}}"
