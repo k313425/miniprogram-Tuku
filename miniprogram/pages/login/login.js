@@ -33,7 +33,7 @@ Page({
     }
   },
   /*** 表单-验证字段*/
-  formSubmit: function (e) {
+  formSubmit(e) {
     const params = e.detail.value;
     console.log(this.checkForm(params));
   
@@ -55,7 +55,7 @@ Page({
     }
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
   },
-  checkForm: function (params) {
+  checkForm(params) {
     if (!this.WxValidate.checkForm(params)) {
       const error = this.WxValidate.errorList[0];
       wx.showToast({
@@ -91,41 +91,5 @@ Page({
         }
       }
     )
-  },
-  /**
-   * 生命周期函数_监听页面初次渲染完成
-   */
-  onReady: function () {
-  },
-  /**
-   * 生命周期函数_监听页面显示
-   */
-  onShow: function () {
-  },
-  /**
-   * 生命周期函数_监听页面隐藏
-   */
-  onHide: function () {
-  },
-  /**
-   * 生命周期函数_监听页面卸载
-   */
-  onUnload: function () {
-    this.initValidate();
-  },
-  /**
-   * 页面相关事件处理函数_监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   }
 });
