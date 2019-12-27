@@ -77,18 +77,14 @@ Page({
   // 顶部tab切换事件
   toggleCategory(e) {
     this.setData({
-      duration: 0
-    });
-    this.setData({
+      duration: 0,
       categoryCur: e.detail.index
     });
   },
   // 页面滑动切换事件
   swipeChange(e) {
     this.setData({
-      duration: 300
-    });
-    this.setData({
+      duration: 300,
       categoryCur: e.detail.current
     });
     this.loadData()
