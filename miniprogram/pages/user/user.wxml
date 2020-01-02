@@ -1,0 +1,57 @@
+<!--miniprogram/pages/user/user.wxml-->
+<wxs module="util" src="../common/lib/util.wxs"></wxs>
+
+<view class="daren-info">
+  <view class="daren-info-img">
+    <image src="/images/user_top_img_default.jpg"></image>
+    <view class="daren-info-logout"></view>
+  </view>
+  <view class="daren-info-cnt ">
+    <navigator url="/pages/user/info">
+      <image class="daren-info-head" src="/images/swipe/7.png"></image>
+    </navigator>
+    <view class="daren-info-name">TianYo
+      <navigator url="/pages/user/info" class="daren-info-edit"></navigator>
+    </view>
+    <view class="daren-info-zhiye">北京市 北京城区 / 数码师</view>
+    <view class="daren-info-focus active{{focus}}" bindtap="focus"></view>
+  </view>
+</view>
+<view class="daren-num">
+  <view data-id="0" bindtap="click">
+    <text class="daren-num-num">20</text>
+    <view class="daren-num-name">作品</view>
+  </view>
+  <view data-id="1" bindtap="click">
+    <text class="daren-num-num">0</text>
+    <view class="daren-num-name">关注</view>
+  </view>
+  <view data-id="2" bindtap="click">
+    <text class="daren-num-num">0</text>
+    <view class="daren-num-name">粉丝</view>
+  </view>
+</view>
+<block wx:for="{{categoryData}}" wx:key="index" wx:if="{{index == currentCur}}">
+  <view class="daren-works">
+    <navigator
+      url="/pages/detail/detail?id={{util.sub(item.passtime, 0, 4)}}&title={{item.title}}&time={{item.passtime}}&image={{item.image}}"
+      wx:for="{{item.listData}}"
+      wx:key="index">
+      <image mode="aspectFill" src="{{item.image}}"></image>
+    </navigator>
+  </view>
+  
+  <view class="scroll-empty" wx:if="{{item.listData.length === 0}}">
+    <text class="empty-tip">暂无相关数据~</text>
+  </view>
+  <view class="scroll-bottom" wx:else>
+    <view class="scroll-loading" wx:if="{{item.end}}">
+      已全部加载
+    </view>
+    <view class="scroll-loading" wx:else>
+      <view class="loading"></view>
+      <view class="text">加载中...</view>
+    </view>
+  </view>
+</block>
+

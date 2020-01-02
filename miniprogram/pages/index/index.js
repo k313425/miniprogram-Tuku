@@ -81,6 +81,18 @@ Page({
   },
   onLoad: function () {
     this.getList(pageStart);
+    wx.request({
+      url: 'http://rap.heiguang.com:38080/repository/get', //仅为示例，并非真实的接口地址
+      data: {
+        'id': 19
+      },
+      header: {
+        'content-type': 'application/json', // 默认值
+      },
+      success: (res) => {
+        console.log(res)
+      }
+    })
   },
   onReachBottom: function () {
     this.more();

@@ -1,0 +1,55 @@
+<!--miniprogram/pages/user/info.wxml-->
+<view class="ziliaoedit-img">
+  <image class="ziliaoedit-img-img" src="/images/swipe/7.png"></image>
+  <form class="ziliaoedit-img-form" enctype='multipart/form-data' id ='fileForm'>
+    <input class="ziliaoedit-img-file" type="file" name="files" accept="image/*;capture=camera" />
+  </form>
+</view>
+<form action="" id="form1" method="post">
+  <view class="ziliaoedit-cnt">
+    <view>
+      <text class="ziliaoedit-cnt-hd">用户名</text>
+      <view class="ziliaoedit-cnt-bd">U157jZ6d5253</view>
+    </view>
+    <view>
+      <text class="ziliaoedit-cnt-hd">昵称</text>
+      <view class="ziliaoedit-cnt-bd"><input class="ziliaoedit-cnt-input" name="nickname" id="nick" value="TianYo" /></view>
+    </view>
+    <view>
+      <text class="ziliaoedit-cnt-hd">性别</text>
+      <picker class="ziliaoedit-cnt-bd ziliaoedit-picker" bindchange="bindSexPickerChange" value="{{sexIndex}}" range="{{sex}}">
+        <view class="picker">
+          {{sex[sexIndex]}}
+        </view>
+      </picker>
+    </view>
+    <view>
+      <text class="ziliaoedit-cnt-hd">QQ</text>
+      <view class="ziliaoedit-cnt-bd"><input class="ziliaoedit-cnt-input" name="qq" id="qq" value="888888" /></view>
+    </view>
+    <view>
+      <text class="ziliaoedit-cnt-hd">微信</text>
+      <view class="ziliaoedit-cnt-bd"><input class="ziliaoedit-cnt-input" name="weixin" id="weixin" value="TianYo" /></view>
+    </view>
+    <view>
+      <text class="ziliaoedit-cnt-hd">城市</text>
+      <picker class="ziliaoedit-cnt-bd ziliaoedit-picker" mode="region" bindchange="bindRegionChange" value="{{region}}">
+        <view class="picker">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
+    <view>
+      <text class="ziliaoedit-cnt-hd">职业</text>
+      <picker class="ziliaoedit-cnt-bd ziliaoedit-picker" bindchange="bindZhiyePickerChange" value="{{zhiyeIndex}}" range="{{zhiyeData}}" range-key="name">
+        <view class="picker">
+          {{zhiyeData[zhiyeIndex].name}}
+        </view>
+      </picker>
+    </view>
+    <view>
+      <text class="ziliaoedit-cnt-hd">个人介绍</text>
+      <textarea class="ziliaoedit-cnt-bd ziliaoedit-textarea" name="textarea" value="审判者决定万物的价值，而参照物则是至臻完美之人，也就是他自己。"/>
+    </view>
+  </view>
+</form>
