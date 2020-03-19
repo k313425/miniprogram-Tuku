@@ -75,23 +75,6 @@ Component({
   },
   methods: {
     /**
-     * 处理 bindscrolltolower 失效情况
-     */
-    bindscroll(e) {
-      // 可以触发滚动表示超过一屏
-      this.setData({
-        overOnePage: true
-      });
-      clearTimeout(this.data.timer);
-      this.setData({
-        timer: setTimeout(() => {
-          this.setData({
-            scrollTop: e.detail.scrollTop
-          })
-        }, 100)
-      });
-    },
-    /**
      * movable-view 滚动监听
      */
     change(e) {
