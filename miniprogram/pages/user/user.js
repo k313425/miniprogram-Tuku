@@ -32,20 +32,21 @@ Page({
       }
     ]
   },
+  // 获取页面数据
   getList(currentPage) {
     let currentCur = this.data.currentCur; //当前页
     let pageData = this.getCurrentData(currentCur); //当前页的数据
-    if (pageData.page > 5) {
+    if (pageData.page > 15) {
       pageData.end = true;
       this.setCurrentData(pageData);
       return false
-    } //加载5次
+    } //加载15次
     if (this.data.currentCur !== 0) {
       console.log(pageData);
-      return false
+      // return false
     }
-    pageData.page = currentPage;
-    this.setCurrentData(currentCur, pageData);
+    // pageData.page = currentPage;
+    // this.setCurrentData(currentCur, pageData);
     // wx.showNavigationBarLoading();
     wx.request({
       url: 'https://api.apiopen.top/getWangYiNews', //仅为示例，并非真实的接口地址

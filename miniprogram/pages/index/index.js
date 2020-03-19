@@ -20,7 +20,7 @@ Page({
     pageData: {
       name: "推荐",
       id: 1,
-      requesting: false,
+      // requesting: false,
       end: false,
       emptyShow: false,
       page: pageStart,
@@ -29,15 +29,15 @@ Page({
   },
   getList(currentPage) {
     let pageData = this.getCurrentData();
-    if (pageData.page > 5) {
+    if (pageData.page > 15) {
       console.log(pageData.page);
       pageData.end = true;
       this.setCurrentData(pageData);
       return false
     }
-    pageData.requesting = true;
-    pageData.page = currentPage;
-    this.setCurrentData(pageData);
+    // pageData.requesting = true;
+    // pageData.page = currentPage;
+    // this.setCurrentData(pageData);
     // wx.showNavigationBarLoading();
     wx.request({
       url: 'https://api.apiopen.top/getWangYiNews', //仅为示例，并非真实的接口地址
@@ -50,7 +50,7 @@ Page({
         'content-type': 'application/json', // 默认值
       },
       success: (res) => {
-        pageData.requesting = false;
+        // pageData.requesting = false;
         // wx.hideNavigationBarLoading();
         pageData.listData = pageData.listData.concat(res.data.result);
         pageData.end = false;
