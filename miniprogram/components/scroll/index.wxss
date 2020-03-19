@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 .scroll-refresh {
-  height: 80rpx;
+  height: 60rpx;
   position: relative;
 }
 .scroll-refresh_hidden {

@@ -12,6 +12,7 @@
       bindtouchend="touchend"
       direction="vertical"
       disabled="{{refreshStatus >= 3}}"
+      damping="40"
       y='{{move}}'>
       <scroll-view
         class="scroll-view"

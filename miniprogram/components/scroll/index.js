@@ -50,7 +50,7 @@ Component({
     // 颜色
     color: {
       type: String,
-      value: ""
+      value: "blue"
     },
     // iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只支持竖向
     enableBackToTop: {
@@ -102,7 +102,7 @@ Component({
       if (refreshStatus >= 3) return;
       
       if (refreshStatus === 2) {
-        wx.vibrateShort();
+        // wx.vibrateShort();
         this.setData({
           refreshStatus: 3,
           move: 0,
@@ -131,13 +131,14 @@ Component({
      */
     requestingEnd(newVal, oldVal) {
       if (this.data.mode === 'more') return;
-      
+      console.log(this.data.scrollHeight1, this.data.scrollHeight2)
+      // 加载完成
       if (oldVal === true && newVal === false) {
         setTimeout(() => {
           this.setData({
             successShow: true,
             refreshStatus: 4,
-            move: this.data.scrollHeight2
+            move: 0
           });
           setTimeout(() => {
             this.setData({
@@ -152,7 +153,7 @@ Component({
                 move: this.data.scrollHeight1
               });
             }, 350)
-          }, 1500)
+          }, 1000)
         }, 600)
       } else {
         if (this.data.refreshStatus !== 3) {
@@ -167,9 +168,9 @@ Component({
      * 监听下拉刷新高度变化, 如果改变重新初始化参数, 最小高度80rpx
      */
     refreshChange(newVal, oldVal) {
-      if (newVal <= 80) {
+      if (newVal <= 60) {
         this.setData({
-          refreshSize: 80
+          refreshSize: 60
         });
       }
       // 异步加载数据时候, 延迟执行 init 方法, 防止基础库 2.7.1 版本及以下无法正确获取 dom 信息
